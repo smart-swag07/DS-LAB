@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -75,15 +76,17 @@ void display() {
 void palindrome() {
     int num[MAX], i = 0, k, flag = 1;
     k = top;
-    while (k != -1)
+    while (k != -1){
         num[i++] = stack[k--];
-    for (i = 0; i <= top; i++) {
-        if (num[i] == stack[i])
-            continue;
-        else
-            flag = 0;
+        for (i = 0; i <= top; i++) {
+            if (num[i] == stack[i])
+                continue;
+            else
+                flag = 0;
+        }
+
     }
-    if (top == -1)
+    if(top == -1)
         printf("Stack is empty\n");
     else {
         if (flag)
@@ -92,4 +95,3 @@ void palindrome() {
             printf("Not a palindrome\n");
     }
 }
-
