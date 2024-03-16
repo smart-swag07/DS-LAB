@@ -1,22 +1,19 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
-struct node {
-    char usn[20], name[50], branch[10];
-    int sem;
-    unsigned long long int phno;
-    struct node *link;
-};
-
 void create();
 void insert_front();
 void insert_rear();
 void display();
 void delete_front();
 void delete_rear();
-
-int count = 0;
+int count=0;
+struct node {
+    char usn[20], name[50], branch[10];
+    int sem;
+    unsigned long long int phno;
+    struct node *link;
+};
 struct node *first = NULL, *last = NULL, *temp = NULL, *p;
 
 void main() {
