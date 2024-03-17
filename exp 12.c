@@ -34,7 +34,7 @@ void linearprob(int a[MAX],int key, int num)
     a[key]=num;
     else
     {
-        printf("\n collision deleted\n");
+        printf("\n collision detected\n");
         i=0;
         while((i<key)&&(flag==0))
         {
@@ -72,5 +72,4 @@ void display(int a[MAX])
             }
         }
     }
-
 }
