@@ -19,7 +19,7 @@ struct node {
     struct node *llink, *rlink;
 };
 
-struct node *first = NULL, *last = NULL, *temp;
+struct node *first = NULL, *last = NULL, *temp,*p;
 
 int main() {
     int ch, n, i;
@@ -80,7 +80,8 @@ void create() {
 void insert_front() {
     if (first == NULL) {
         create();
-        first = last = temp;
+        first = temp;
+        last = temp;
     } else {
         create();
         temp->rlink = first;
@@ -92,7 +93,8 @@ void insert_front() {
 void insert_rear() {
     if (first == NULL) {
         create();
-        first = last = temp;
+        first = temp;
+        last = temp;
     } else {
         create();
         temp->llink = last;
@@ -102,7 +104,6 @@ void insert_rear() {
 }
 
 void display() {
-    struct node *p;
     if (first == NULL) {
         printf("list is empty\n");
         return;
@@ -117,7 +118,6 @@ void display() {
 }
 
 void delete_front() {
-    struct node *p;
     if (first == NULL) {
         printf("list is empty, cannot delete\n");
     } else if (first->rlink == NULL) {
